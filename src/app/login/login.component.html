@@ -1,0 +1,12 @@
+<div id="centro">
+    <form [formGroup]="loginForm" (submit)="login()">
+        <div>
+            <input formControlName="email" placeholder="email">
+        </div>
+        <div>
+            <input formControlName="senha" placeholder="senha">
+        </div>
+
+        <button type="submit">login</button>
+    </form>
+</div>
