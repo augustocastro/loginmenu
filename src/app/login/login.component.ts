@@ -10,6 +10,7 @@ import { UserService } from '../service/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -20,7 +21,6 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private router: Router,
     private userService: UserService) {
-
   }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       .subscribe((token: Token) => {
         this.userService.setToken(token.tipo + ' ' + token.token);
         this.router.navigate(['/menu'])
-      }, 
-      error => console.log(error.message));
+      },
+        error => console.log(error.message));
   }
 }

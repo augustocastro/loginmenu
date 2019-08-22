@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  public menu: string[];
 
   ngOnInit() {
+    this.menu = [
+      'Gerencial',
+      'Financeiro'
+    ]
   }
-
 }

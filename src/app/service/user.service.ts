@@ -1,7 +1,8 @@
 
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+
 import * as jwt_decode from 'jwt-decode';
+
 import { Perfil } from '../model/Perfil';
 import { TokenService } from './token.service';
 import { TokenDecoded } from '../model/TokenDecoded';
@@ -30,7 +31,7 @@ export class UserService {
         this.perfis = tokenDecode.usuario.perfis;
     }
 
-    hashRole(nomePerfil: string): boolean {
+    hashPerfil(nomePerfil: string): boolean {
         return this.perfis.filter(perfil => perfil.nome === nomePerfil).length > 0 ? true : false;
     }
 }

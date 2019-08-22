@@ -6,10 +6,7 @@ const KEY = 'authToken';
   providedIn: 'root'
 })
 export class TokenService {
-
-  constructor() {
-  }
-
+  
   hasToken(): boolean {
     return !!this.getToken();
   }

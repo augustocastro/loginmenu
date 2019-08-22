@@ -1,39 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing.module';
-import { MenuComponent } from './menu/menu.component';
-import { ShowMenuIfHasRuleDirective } from './menu/directiva/show-if-has-rule.directive';
+
+import { AppComponent } from './app.component';
+import { LoginModule } from './login/login.module';
+import { MenuModule } from './menu/menu.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    MenuComponent,
-    ShowMenuIfHasRuleDirective
   ],
   imports: [
     BrowserModule,
     CommonModule,
     RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    LoginModule,
+    MenuModule
   ],
   exports: [
-    RouterModule,
-    LoginComponent,
-    MenuComponent,
-    ShowMenuIfHasRuleDirective
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

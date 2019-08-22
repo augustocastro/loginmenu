@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
-import { UserService } from '../../service/user.service';
 
+import { UserService } from '../../service/user.service';
 
 @Directive({
     selector: '[appShowMenuIfHasRuleDirective]'
@@ -17,7 +17,7 @@ export class ShowMenuIfHasRuleDirective implements OnInit {
     }
 
     ngOnInit(): void {
-        if (!this.userService.hashRole(this.nomePerfil)) {
+        if (!this.userService.hashPerfil(this.nomePerfil)) {
             this.renderer.setElementStyle(this.element.nativeElement, 'display', 'none');
         }
     };

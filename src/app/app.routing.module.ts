@@ -1,7 +1,7 @@
-import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
-import {LoginComponent} from './login/login.component'
+import { LoginComponent } from './login/login.component'
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'menu',
     component: MenuComponent,
   },
-  
+
 ];
 
 @NgModule({
@@ -21,5 +21,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-
 }

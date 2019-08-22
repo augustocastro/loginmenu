@@ -1,5 +1,3 @@
-<ul>
-  <li appShowMenuIfHasRuleDirective nomePerfil="adm">Adm</li>
-  <li appShowMenuIfHasRuleDirective nomePerfil="Gerencial">Gerencial</li>
-  <li appShowMenuIfHasRuleDirective nomePerfil="Financeiro">Financeiro</li>
+<ul *ngFor="let item of menu">
+  <li appShowMenuIfHasRuleDirective nomePerfil={{item}}>{{item}}</li>
 </ul>
