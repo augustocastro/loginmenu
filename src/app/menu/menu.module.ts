@@ -1,13 +1,13 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { ShowMenuIfHasRuleDirective } from "./directiva/show-if-has-rule.directive";
+import { ShowMenuIfHasPerfilDirective } from "./directiva/show-if-has-perfil.directive";
 import { MenuComponent } from "./menu.component";
 
 @NgModule({
     declarations: [
         MenuComponent,
-        ShowMenuIfHasRuleDirective
+        ShowMenuIfHasPerfilDirective
     ],
     exports: [
         MenuComponent,
