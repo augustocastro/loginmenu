@@ -17,8 +17,7 @@ export class LoginService {
     }
 
     login(login: Login): Observable<Token> {
-        let headers = new HttpHeaders();
-        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
         return this.httpClient.post<Token>(API + '/auth', JSON.stringify(login), { headers: headers });
     }
 }
