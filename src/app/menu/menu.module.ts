@@ -11,7 +11,6 @@ import { MenuComponent } from "./menu.component";
     ],
     exports: [
         MenuComponent,
-
     ],
     imports: [
         CommonModule,

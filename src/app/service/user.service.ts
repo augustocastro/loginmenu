@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 
 import * as jwt_decode from 'jwt-decode';
-
 import { Perfil } from '../model/Perfil';
 import { TokenService } from './token.service';
 import { TokenDecoded } from '../model/TokenDecoded';

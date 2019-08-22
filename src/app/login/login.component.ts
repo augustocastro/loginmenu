@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Login } from '../model/Login';
-import { Token } from '../model/Token';
 import { LoginService } from '../service/login.service';
 import { UserService } from '../service/user.service';
 
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit {
     const login: Login = this.loginForm.getRawValue();
 
     this.loginService.login(login)
-      .subscribe((token: Token) => {
+      .subscribe(token => {
         this.userService.setToken(token.tipo + ' ' + token.token);
         this.router.navigate(['/menu'])
       },
