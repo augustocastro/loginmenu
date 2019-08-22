@@ -30,7 +30,13 @@ export class UserService {
         this.perfis = tokenDecoded.usuario.perfis;
     }
 
-    hashPerfil(nomePerfil: string): boolean {
-        return this.perfis.filter(perfil => perfil.nome === nomePerfil).length > 0 ? true : false;
+    userHasPermission(permissoes: string[]): boolean {
+        let count = 0;
+
+        permissoes.forEach(permissao => {
+            count += (this.perfis.filter(perfil => perfil.nome === permissao).length > 0 ? 1 : 0);
+        });
+
+        return count > 0 ? true : permissoes.length === 0 ? true : false;
     }
 }

@@ -1,6 +1,7 @@
 import { Directive, ElementRef, Input, OnInit, Renderer } from '@angular/core';
 
 import { UserService } from '../../service/user.service';
+import { ItemMenu } from 'src/app/model/ItemMenu';
 
 @Directive({
     selector: '[appShowMenuIfHasPerfilDirective]'
@@ -8,7 +9,7 @@ import { UserService } from '../../service/user.service';
 export class ShowMenuIfHasPerfilDirective implements OnInit {
 
     @Input()
-    nomePerfil: string;
+    itemMenu: ItemMenu;
 
     constructor(
         private element: ElementRef,
@@ -17,7 +18,7 @@ export class ShowMenuIfHasPerfilDirective implements OnInit {
     }
 
     ngOnInit(): void {
-        if (!this.userService.hashPerfil(this.nomePerfil)) {
+        if (!this.userService.userHasPermission(this.itemMenu.permissoes)) {
             this.renderer.setElementStyle(this.element.nativeElement, 'display', 'none');
         }
     };
