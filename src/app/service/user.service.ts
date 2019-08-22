@@ -26,8 +26,8 @@ export class UserService {
 
     private decodeToken(): void {
         const token: string = this.tokenSerive.getToken();
-        const tokenDecode: TokenDecoded = jwt_decode(token) as TokenDecoded;
-        this.perfis = tokenDecode.usuario.perfis;
+        const tokenDecoded: TokenDecoded = jwt_decode(token) as TokenDecoded;
+        this.perfis = tokenDecoded.usuario.perfis;
     }
 
     hashPerfil(nomePerfil: string): boolean {
